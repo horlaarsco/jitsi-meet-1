@@ -21,6 +21,7 @@ import {
     unregisterSound
 } from '../base/sounds';
 import { TRACK_ADDED } from '../base/tracks';
+import { sendMessage } from '../chat/actions.any';
 import { NOTIFICATION_TIMEOUT_TYPE, showErrorNotification, showNotification } from '../notifications';
 
 import { RECORDING_SESSION_UPDATED, START_LOCAL_RECORDING, STOP_LOCAL_RECORDING } from './actionTypes';
@@ -132,7 +133,6 @@ MiddlewareRegistry.register(({ dispatch, getState }) => next => async action => 
     }
 
     case START_LOCAL_RECORDING: {
-        const { localRecording } = getState()['features/base/config'];
         const { onlySelf } = action;
 
         try {
@@ -143,9 +143,8 @@ MiddlewareRegistry.register(({ dispatch, getState }) => next => async action => 
                 titleKey: 'dialog.recording'
             };
 
-            if (localRecording?.notifyAllParticipants && !onlySelf) {
-                dispatch(playSound(RECORDING_ON_SOUND_ID));
-            }
+            dispatch(playSound(RECORDING_ON_SOUND_ID));
+            dispatch(sendMessage('Meeting is being recorded.'));
             dispatch(showNotification(props, NOTIFICATION_TIMEOUT_TYPE.MEDIUM));
             dispatch(showNotification({
                 titleKey: 'recording.localRecordingStartWarningTitle',
@@ -187,6 +186,7 @@ MiddlewareRegistry.register(({ dispatch, getState }) => next => async action => 
         if (LocalRecordingManager.isRecordingLocally()) {
             LocalRecordingManager.stopLocalRecording();
             dispatch(updateLocalRecordingStatus(false));
+            dispatch(sendMessage('Recording has ended'));
             if (localRecording?.notifyAllParticipants && !LocalRecordingManager.selfRecording) {
                 dispatch(playSound(RECORDING_OFF_SOUND_ID));
             }

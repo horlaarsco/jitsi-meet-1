@@ -225,6 +225,7 @@ const LocalRecordingManager: ILocalRecordingManager = {
 
             // @ts-ignore
             gdmStream = await navigator.mediaDevices.getDisplayMedia({
+                preferCurrentTab: true,
                 // @ts-ignore
                 video: { displaySurface: 'browser',
                     frameRate: 30 },
