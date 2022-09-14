@@ -267,10 +267,10 @@ export class AbstractWelcomePage<P: Props> extends Component<P, *> {
  */
 export function _mapStateToProps(state: Object) {
     return {
-        _calendarEnabled: isCalendarEnabled(state),
+        _calendarEnabled: false,
         _enableInsecureRoomNameWarning: state['features/base/config'].enableInsecureRoomNameWarning || false,
         _moderatedRoomServiceUrl: state['features/base/config'].moderatedRoomServiceUrl,
-        _recentListEnabled: isRecentListEnabled(),
+        _recentListEnabled: false,
         _room: state['features/base/conference'].room,
         _settings: state['features/base/settings']
     };
