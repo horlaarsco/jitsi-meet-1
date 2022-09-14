@@ -1,0 +1,30 @@
+<body onload="checkToken();">
+<h1>hey</h1>
+<script>
+function checkToken()
+{
+    let url = new URL(window.location.href);
+    let search = new URLSearchParams(url.search);
+    if(search.has('jwt')){
+        localStorage.setItem("meeting", window.location.href);
+    }else if(!search.has('jwt'))
+    {
+      var meeting_link = localStorage.getItem("meeting");
+      if(meeting_link.includes(url.pathname)){
+        if(meeting_link && meeting_link.includes("jwt=")){
+          window.location = meeting_link;
+        }
+      }
+    }
+}
+/*
+const onConfirmRefresh = function (event) {
+  event.preventDefault();
+  return event.returnValue = "Are you sure you want to leave that page?";
+}
+
+window.addEventListener("beforeunload", onConfirmRefresh, { capture: true });
+//  file:///home/jaleel/jitsi-meet/test.html
+*/
+</script>
+</body>

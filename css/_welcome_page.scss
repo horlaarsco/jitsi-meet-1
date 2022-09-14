@@ -20,7 +20,7 @@ body.welcome-page {
         background-size: $welcomePageHeaderBackgroundSize;
         padding-bottom: $welcomePageHeaderPaddingBottom;
         background-color: #131519;
-        height: 400px;
+        height: auto;
         overflow: hidden;
         position: relative;
 
@@ -41,6 +41,17 @@ body.welcome-page {
             opacity: $welcomePageHeaderTextTitleOpacity;
             text-align: $welcomePageHeaderTextAlign;
         }
+        .header-text-title-meet {
+            color: #fff;
+            font-size: 50px;
+            font-weight: bold;
+            margin-bottom: 0;
+            max-width: 950px;
+            margin: 0 auto;
+            opacity: 1;
+            text-align: center;
+            font-family: arial, Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;        
+        }
 
         .header-text-subtitle {
             color: #fff;
@@ -49,7 +60,18 @@ body.welcome-page {
             line-height: 26px;
             margin: 16px 0 32px 0;
             text-align: $welcomePageHeaderTextAlign;
+        }
 
+        .header-text-subtitle-meet {
+            color: white;
+            display: inline-block;
+            background-color: #9d1f80;
+            padding: 0 30px;
+            font-weight: 400;
+        }
+        .header-image-new{
+            display: flex;
+            justify-content: center;
         }
 
         #enter_room {
@@ -277,7 +299,7 @@ body.welcome-page {
     .welcome-footer {
         background: #131519;
         color: #fff;
-        margin-top: 40px;
+        margin-top: 0px;
         position: relative;
     }
 
