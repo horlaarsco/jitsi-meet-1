@@ -502,7 +502,7 @@
         "expandedOff": "Recording has stopped",
         "expandedOn": "The meeting is currently being recorded.",
         "expandedPending": "Recording is being started…",
-        "failedToStart": "Recording failed to start",
+        "failedToStart": "Beta: Recording failed to start",
         "fileSharingdescription": "Share recording with meeting participants",
         "live": "LIVE",
         "loggedIn": "Logged in as {{userName}}",

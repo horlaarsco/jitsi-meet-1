@@ -44,10 +44,10 @@ class StartRecordingDialogContent extends AbstractStartRecordingDialogContent<Pr
     render() {
         return (
             <Container className = 'recording-dialog'>
-                { this._renderNoIntegrationsContent() }
+                {/* { this._renderNoIntegrationsContent() }
                 { this._renderFileSharingContent() }
                 { this._renderUploadToTheCloudInfo() }
-                { this._renderIntegrationsContent() }
+                { this._renderIntegrationsContent() } */}
                 { this._renderLocalRecordingContent() }
             </Container>
         );
@@ -359,7 +359,7 @@ class StartRecordingDialogContent extends AbstractStartRecordingDialogContent<Pr
                                 === RECORDING_TYPES.LOCAL } />
                     </Container>
                 </Container>
-                {selectedRecordingService === RECORDING_TYPES.LOCAL && (
+                {/* {selectedRecordingService === RECORDING_TYPES.LOCAL && (
                     <>
                         {_localRecordingSelfEnabled && (
                             <Container>
@@ -390,7 +390,7 @@ class StartRecordingDialogContent extends AbstractStartRecordingDialogContent<Pr
                             </Text>
                         }
                     </>
-                )}
+                )} */}
             </>
 
         );

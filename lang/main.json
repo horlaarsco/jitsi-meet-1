@@ -886,7 +886,7 @@
         "expandedOff": "Recording has stopped",
         "expandedOn": "The meeting is currently being recorded.",
         "expandedPending": "Recording is being started...",
-        "failedToStart": "Recording failed to start",
+        "failedToStart": "Beta: Recording failed to start",
         "fileSharingdescription": "Share the recording link with the meeting participants",
         "highlight": "Highlight",
         "highlightMoment": "Highlight moment",
@@ -922,7 +922,7 @@
         "sessionAlreadyActive": "This session is already being recorded or live streamed.",
         "signIn": "Sign in",
         "signOut": "Sign out",
-        "surfaceError": "Please select the current tab.",
+        "surfaceError": "Please select from \"This Tab\" to successfully record.",
         "unavailable": "Oops! The {{serviceName}} is currently unavailable. We're working on resolving the issue. Please try again later.",
         "unavailableTitle": "Recording unavailable",
         "uploadToCloud": "Upload to the cloud"
