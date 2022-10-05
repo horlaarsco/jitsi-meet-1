@@ -1,5 +1,23 @@
 <html itemscope itemtype="http://schema.org/Product" prefix="og: http://ogp.me/ns#" xmlns="http://www.w3.org/1999/html">
   <head>
+    <script type="text/javascript">
+        if(window.location.href != 'https://staging-meet4.javat365.com/'){
+            let url = new URL(window.location.href);
+            let search = new URLSearchParams(url.search);
+            if(search.has('jwt')){
+                localStorage.setItem("meeting", window.location.href);
+            }else if(!search.has('jwt'))
+            {
+              var meeting_link = localStorage.getItem("meeting");
+              if(meeting_link.includes(url.pathname)){
+                if(meeting_link && meeting_link.includes("jwt=")){
+                  window.location = meeting_link;
+                }
+              }
+          }
+        }        
+    </script>
+
     <!--#include virtual="head.html" -->
     <meta charset="utf-8">
     <meta http-equiv="content-type" content="text/html;charset=utf-8">
