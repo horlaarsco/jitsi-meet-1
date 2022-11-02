@@ -229,12 +229,7 @@ const LocalRecordingManager: ILocalRecordingManager = {
                 // @ts-ignore
                 video: { displaySurface: 'browser',
                     frameRate: 30 },
-                audio: {
-                    autoGainControl: false,
-                    channelCount: 2,
-                    echoCancellation: false,
-                    noiseSuppression: false
-                }
+                    audio: false,
             });
 
             // @ts-ignore

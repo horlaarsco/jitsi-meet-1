@@ -1,5 +1,7 @@
 // @flow
 
+import jwtEncode from 'jwt-encode';
+
 import { getActiveSession } from '../../features/recording/functions';
 import { getRoomName } from '../base/conference';
 import { getInviteURL } from '../base/connection';
@@ -512,6 +514,37 @@ export function getShareInfoText(
         state: Object, inviteUrl: string, useHtml: ?boolean): Promise<string> {
     let roomUrl = _decodeRoomURI(inviteUrl);
     const includeDialInfo = state['features/base/config'] !== undefined;
+
+
+    const meetjwt = '22fb1ee4b1a20e32bf67ee773c1f27fdf6605732';
+
+    const data = {
+        context: {
+            user: {
+                avatar: '',
+                name: '',
+                email: '',
+                moderator: false,
+                affiliation: 'owner'
+            },
+            features: {
+                livestreaming: 'true',
+                'outbound-call': 'true',
+                transcription: 'true',
+                recording: 'true'
+            },
+            group: '*'
+        },
+        iss: 'jitsi-16855',
+        aud: 'jitsi',
+        room: '*',
+        sub: new URL(inviteUrl).hostname
+    };
+
+
+    const jwt = jwtEncode(data, meetjwt);
+
+    roomUrl = `${roomUrl}?jwt=${jwt}`;
 
     if (useHtml) {
         roomUrl = `<a href="${roomUrl}">${roomUrl}</a>`;

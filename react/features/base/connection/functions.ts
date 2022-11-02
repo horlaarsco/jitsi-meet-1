@@ -2,6 +2,7 @@ import { IStateful } from '../app/types';
 import { toState } from '../redux/functions';
 import { toURLString } from '../util/uri';
 
+
 import { getURLWithoutParams } from './utils';
 
 /**
@@ -62,7 +63,7 @@ export function getInviteURL(stateOrGetState: IStateful): string {
         const meetingId
             = state['features/base/config'].brandingRoomAlias || urlWithoutParams.pathname.replace(/\//, '');
 
-        return `${inviteDomain}/${meetingId}`;
+        return `${inviteDomain}/${meetingId}`; 
     }
 
     return urlWithoutParams.href;

@@ -52,6 +52,7 @@ class DisplayNamePrompt extends AbstractDisplayNamePrompt<State> {
     render() {
         return (
             <Dialog
+            cancelDisabled
                 isModal = { false }
                 onSubmit = { this._onSubmit }
                 titleKey = 'dialog.displayNameRequired'

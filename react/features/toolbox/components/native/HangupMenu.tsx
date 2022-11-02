@@ -57,12 +57,6 @@ function HangupMenu() {
     return (
         <BottomSheet>
             <View style = { _styles.hangupMenuContainer }>
-                { isModerator && <Button
-                    accessibilityLabel = 'toolbar.endConference'
-                    labelKey = 'toolbar.endConference'
-                    onClick = { handleEndConference }
-                    style = { _styles.hangupButton }
-                    type = { DESTRUCTIVE } /> }
                 <Button
                     accessibilityLabel = 'toolbar.leaveConference'
                     labelKey = 'toolbar.leaveConference'
