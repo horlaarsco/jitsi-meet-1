@@ -1453,7 +1453,7 @@ class Toolbox extends Component<Props> {
                                         hidden = { false }
                                         inDrawer = { _overflowDrawer }
                                         onKeyDown = { this._onEscKey }>
-                                        <EndConferenceButton />
+                                        {/* <EndConferenceButton /> */}
                                         <LeaveConferenceButton />
                                     </ContextMenu>
                                 </HangupMenuButton>

@@ -513,6 +513,11 @@ export function getShareInfoText(
     let roomUrl = _decodeRoomURI(inviteUrl);
     const includeDialInfo = state['features/base/config'] !== undefined;
 
+    const jwt = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJjb250ZXh0Ijp7InVzZXIiOnsiYXZhdGFyIjoiIiwibmFtZSI6IiIsImVtYWlsIjoiIiwibW9kZXJhdG9yIjpmYWxzZSwiYWZmaWxpYXRpb24iOiJvd25lciJ9LCJmZWF0dXJlcyI6eyJsaXZlc3RyZWFtaW5nIjoidHJ1ZSIsIm91dGJvdW5kLWNhbGwiOiJ0cnVlIiwidHJhbnNjcmlwdGlvbiI6InRydWUiLCJyZWNvcmRpbmciOiJ0cnVlIn0sImdyb3VwIjoiKiJ9LCJpc3MiOiJqaXRzaS0xNjg1NSIsImF1ZCI6ImppdHNpIiwicm9vbSI6IioiLCJzdWIiOiJtZWV0LmphdmF0MzY1LmNvbSIsImlhdCI6MTY2NzQ2ODE4NSwiZXhwIjo0NzkxNjcwNTg1fQ.Fx235S6Skq5tRAarV748Vse1-b4oV5zJhaaJYy9Pl3A';
+
+
+    roomUrl = `${roomUrl}?jwt=${jwt}`;
+
     if (useHtml) {
         roomUrl = `<a href="${roomUrl}">${roomUrl}</a>`;
     }
